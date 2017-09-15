@@ -1,0 +1,31 @@
+<!doctype html>
+<html ng-app="App">
+<head>
+  <meta charset="utf-8">
+  <title>Todos $http</title>
+  <!--<link rel="stylesheet" href="style.css">-->
+
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.2/angular.js"></script>
+  <script src="app.js"></script>
+</head>
+<body ng-controller="TodoCtrl">
+<table>
+  <tr>
+    <th ng-click="orderBySort('name')">name</th>
+    <th ng-click="orderBySort('category')">category</th>
+    <th ng-click="orderBySort('amount')">amount</th>
+  </tr>
+  <tr ng-repeat="detail in details | orderBy:propertyName:reverse">
+    <td>
+      {{detail.name}}
+    </td>
+    <td>
+      {{detail.category}}
+    </td>
+    <td>
+      {{detail.amount}}
+    </td>
+  </tr>
+</table>
+</body>
+</html>

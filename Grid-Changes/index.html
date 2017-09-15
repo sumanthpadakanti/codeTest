@@ -1,0 +1,25 @@
+﻿<!doctype html>
+<html ng-app="App">
+<head>
+    <meta charset="utf-8">
+    <title>Todos $http</title>
+    <!--<link rel="stylesheet" href="style.css">-->
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.2/angular.js"></script>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.css" rel="stylesheet" />
+    <script src="app.js"></script>
+</head>
+<body ng-controller="TodoCtrl">
+    <table class="table table-condensed table-bordered table-striped">
+        <tr>
+            <th ng-repeat="item in gridHeaders" ng-click="orderBySort(item)">{{item}}</th>
+        </tr>
+        <tr ng-repeat="detail in gridData | orderBy:propertyName:reverse">
+            <td ng-repeat="item in gridHeaders">
+                 {{detail[item] || '-'}}
+            </td>
+            
+        </tr>
+    </table>
+</body>
+</html>
